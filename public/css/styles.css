@@ -4,6 +4,7 @@ body, .container_super{
     padding: 0;
     background-color: #f9cfd3;
     text-transform: uppercase;
+    animation: anime 1.5s ease;
 }
 
 .carousel .carousel-item{
@@ -18,7 +19,7 @@ body, .container_super{
     border-radius: 12px;
 }
 
-.container{margin: 20% auto 0 auto !important;}
+.container{margin: 20% auto 0 auto}
 
 .container h3{
     font-size: 1.4rem;
@@ -40,7 +41,7 @@ a{text-decoration: none;}
         align-items: center;
         background-color: #fff;
         height: 100vh;
-    }
+    }   
 }
 
 @media  only screen and (max-width: 600px){
@@ -52,10 +53,7 @@ a{text-decoration: none;}
         align-items: center;
     }
     
-    .container_nav img{
-        width: 90px;
-    }
-
+    .container_nav img{ width: 90px;}
 
     .tittle_principal, .tittle_producto{
         width: 90%;
@@ -75,45 +73,49 @@ a{text-decoration: none;}
     }
 
     .container_menu{
+        max-width: 100%;
+        display: flex;
+        flex-direction: column;
+        margin: 5% auto 20% auto;
+    }
+
+    /*ARTICULOS IMG*/
+    
+    .image_item{
+        position: relative;
+        width: 85%;
+        margin: 4% auto;
+    }
+
+    .mouse_hover{
+        display: block;
         width: 100%;
-        margin: 4% auto;
+        border-radius: 8px;
     }
 
-    .container_articulo{
-        width: 80%;
-        margin: 0 auto;
-        margin: 4% auto;
-    }
-
-    .container_articulo_fondo{
-        height: 165px;
+    .fundo_hover{
+        font-family: 'Oranienbaum', serif;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0,0,0,0.6);
+        color: #fff;
         display: flex;
         justify-content: center;
         align-items: center;
-        font-size: 1.8rem;
-        font-family: 'Oranienbaum', serif;
-        position: relative;
-        z-index: 2;
+        opacity: 0;
         border-radius: 8px;
-        color: transparent;
     }
 
-    .container_articulo_fondo:hover{
-        background-color: rgba(0,0, 0, .3);
-        color: #fff;
+    .fundo_hover:hover{
+        opacity: 1;
     }
 
-
-    .container_articulo img{
-        width: 80%;
-        border-radius: 8px;
-        position: absolute;
-        z-index: 1;
-    }
-
-
+    /*PAGES*/
     .container_producto{
-        width: 64%;
+        width: 85%;
         margin: 4% auto;
     }
 
@@ -126,8 +128,10 @@ a{text-decoration: none;}
     .tittle_producto h1{margin: 0;}
 
     .container_item{
-        width: 100%;
-        margin: 0 auto 14% auto;
+        width: 85%;
+        margin: 10% auto;
+        display: flex;
+        flex-direction: column;
     }
 
     .container_item h3, .container_item h4{
@@ -137,21 +141,22 @@ a{text-decoration: none;}
     .container_item img{
         width: 100%;
         height: 250px;
-        border-radius: 12px;
+        border-top-right-radius: 12px;
+        border-top-left-radius: 12px;
 
     }
 
     .container_item .descripcion{
-        box-sizing: border-box;
-        background-color: #fff;
-        position: absolute;
-        width: 64%;
-        margin-top: 46%;
-        padding: 0 4%;
-        border-bottom-left-radius: 12px;
-        border-bottom-right-radius: 12px;
         font-family: 'Oranienbaum', serif;
-        text-transform: capitalize;
+        width: 100%;
+        height: 100%;
+        background-color: #fff;
+        color: #000;
+        box-sizing: border-box;
+        padding: 1% 4%;
+        margin: 0;
+        border-bottom-right-radius: 12px;
+        border-bottom-left-radius: 12px;
     }
 
     .descripcion h4{
@@ -163,6 +168,7 @@ a{text-decoration: none;}
         width: 70%;
         margin: 0 auto;
     }
+    /*FOOTER*/
 
     .container_fotter{
         box-sizing: border-box;
@@ -215,3 +221,11 @@ a{text-decoration: none;}
     }
 }
 
+@keyframes anime{
+    from{
+        opacity: 0;
+    }
+    to{
+        opacity: 1;
+    }
+}
